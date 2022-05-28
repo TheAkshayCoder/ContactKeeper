@@ -6,8 +6,9 @@ const ContactItem = (props) => {
     // const {name,email,phone,type} = props;
     const ContactContext = useContext(contactContext)
 
-    const deleteContact =(id)=>{
-        ContactContext.deletContact(id)
+    const deleteThisContact =()=>{
+        console.log(props);
+        ContactContext.deleteContact(props.id)
     }
   return (
     <div className='card bg-light'>
@@ -24,7 +25,7 @@ const ContactItem = (props) => {
         </ul>
         <p>
             <button className='btn btn-dark btn-sm'>Edit</button>
-            <button className='btn btn-danger btn-sm' onClick={deleteContact}>Delete</button>
+            <button className='btn btn-danger btn-sm' onClick={deleteThisContact}>Delete</button>
         </p>
     </div>
   )

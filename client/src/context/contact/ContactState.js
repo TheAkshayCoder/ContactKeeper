@@ -1,7 +1,8 @@
 import React, {useReducer} from "react";
 import uuid from 'uuid';
 import contactContext from './contactContext';
-import contactReducer from './contactReducer'
+import contactReducer from './contactReducer';
+import { v4 } from 'uuid';
 import { ADD_CONTACT,DELETE_CONTACT,SET_CURRENT,CLEAR_CURRENT,UPDATE_CONTACT,FILTER_CONTACTS,SET_ALERT,CLEAR_FILTER,REMOVE_ALERT} from "../types";
 
 const ContactState = props =>{
@@ -34,7 +35,7 @@ const ContactState = props =>{
 
     // Add contact 
     const addContact = contact =>{
-        contact.id = uuid.v4()
+        contact.id = v4()
         dispatch({type:ADD_CONTACT,payload:contact});
     };
 

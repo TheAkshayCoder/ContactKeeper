@@ -10,7 +10,7 @@ const Contacts = () => {
   return (
     <Fragment>
         {contacts.map((contact,i)=>{
-          return <ContactItem key={i} name={contact.name} email={contact.email} phone={contact.phone} type={contact.type}/>
+          return <ContactItem key={i} id={contact.id} name={contact.name} email={contact.email} phone={contact.phone} type={contact.type}/>
         })}
     </Fragment>
   )
